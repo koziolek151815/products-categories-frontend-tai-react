@@ -21,10 +21,7 @@ function AddCategoryPage(props) {
         <div className="MainPage">
             Add category
             <form>
-                <label>
-                    Category name:
-                    <input ref={nameInput} type="text" name="name" placeholder="name"/>
-                </label>
+                <input ref={nameInput} type="text" name="name" placeholder="category name"/>
                 <button id="addCategory" onClick={addCategoryRequest}>Submit</button>
             </form>
         </div>
