@@ -6,6 +6,10 @@ import {
 } from "react-router-dom";
 import MainPage from "./components/MainPage/MainPage";
 import ProductsForCategoryPage from "./components/ProductsForCategoryPage/ProductsForCategoryPage";
+import AddProductPage from "./components/AddProductPage/AddProductPage";
+import AddCategoryPage from "./components/AddCategoryPage/AddCategoryPage";
+import UpdateProductPage from "./components/UpdateProductPage/UpdateProductPage";
+import UpdateCategoryPage from "./components/UpdateCategoryPage/UpdateCategoryPage";
 
 function App() {
     return (
@@ -18,6 +22,18 @@ function App() {
                         </Route>
                         <Route path="/categories/:id/products">
                             <ProductsForCategoryPage/>
+                        </Route>
+                        <Route path="/addProduct" exact={true}>
+                            <AddProductPage/>
+                        </Route>
+                        <Route path="/addCategory" exact={true}>
+                            <AddCategoryPage/>
+                        </Route>
+                        <Route path="/updateProduct/:id">
+                            <UpdateProductPage/>
+                        </Route>
+                        <Route path="/updateCategory/:id">
+                            <UpdateCategoryPage/>
                         </Route>
                     </Switch>
                 </div>

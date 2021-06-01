@@ -6,8 +6,12 @@ function MainPage() {
     const allProductsUrl = "products"
     return (
         <div className="MainPage">
-            <ProductsList url = {allProductsUrl} />
+            <ProductsList url={allProductsUrl}/>
+            <a className="btn btn-default bg-info"
+               href={`/addProduct`}>Add product</a>
             <CategoriesList/>
+            <a className="btn btn-default bg-info"
+               href={`/addCategory`}>Add category</a>
         </div>
     );
 }

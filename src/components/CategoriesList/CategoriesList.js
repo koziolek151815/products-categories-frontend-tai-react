@@ -12,19 +12,19 @@ class CategoriesList extends React.Component {
         super(props);
         this.fetchCategories();
     }
-    getCategoriesFromApi = async ()=>{
+
+    getCategoriesFromApi = async () => {
         return await axios.get(
             `${apiUrl}categories`
         );
     }
     fetchCategories = () => {
-        this.getCategoriesFromApi().then((response)=>{
+        this.getCategoriesFromApi().then((response) => {
             this.setState({
                 categories: response.data
             });
         })
     };
-
 
 
     render() {
@@ -37,4 +37,5 @@ class CategoriesList extends React.Component {
         );
     }
 }
+
 export default CategoriesList;

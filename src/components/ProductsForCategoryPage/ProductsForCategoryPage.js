@@ -6,7 +6,7 @@ function ProductsForCategoryPage(props) {
     const productsForCategoryUrl = `categories/${props.match.params.id}/products`;
     return (
         <div className="MainPage">
-            <ProductsList url = {productsForCategoryUrl} />
+            <ProductsList url={productsForCategoryUrl}/>
         </div>
     );
 }
