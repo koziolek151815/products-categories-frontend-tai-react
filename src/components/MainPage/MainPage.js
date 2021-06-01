@@ -1,6 +1,7 @@
 import React from "react";
 import ProductsList from "../ProductsList/ProductsList";
 import CategoriesList from "../CategoriesList/CategoriesList";
+import {withRouter} from "react-router-dom";
 
 function MainPage() {
     const allProductsUrl = "products"
@@ -16,4 +17,4 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default withRouter(MainPage);

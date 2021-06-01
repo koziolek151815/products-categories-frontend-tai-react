@@ -26,7 +26,6 @@ class CategoriesList extends React.Component {
         })
     };
 
-
     render() {
         return (
             <div className="MainPage">
