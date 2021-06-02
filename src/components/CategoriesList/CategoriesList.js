@@ -5,7 +5,8 @@ import CategoriesListElement from "../CategoriesListElement/CategoriesListElemen
 
 class CategoriesList extends React.Component {
     state = {
-        categories: []
+        categories: [],
+        error: false
     };
 
     constructor(props) {
@@ -29,9 +30,18 @@ class CategoriesList extends React.Component {
     deleteCategory = (id) => {
         axios.delete(
             `${apiUrl}categories/${id}`
-        );
-        const filteredArray = this.state.categories.filter(category => category.id !== id)
-        this.setState({categories: filteredArray});
+        ).then((response) => {
+            const filteredArray = this.state.categories.filter(category => category.id !== id)
+            this.setState({categories: filteredArray});
+        }, (error) => {
+            this.onErrorSubmit();
+
+        });
+    }
+    onErrorSubmit = () => {
+        this.setState({
+            error: !this.state.error
+        })
     }
 
     render() {
@@ -40,6 +50,10 @@ class CategoriesList extends React.Component {
                 {this.state.categories.map((category, index) => (
                     <CategoriesListElement category={category} key={index} deleteCategory={this.deleteCategory}/>
                 ))}
+                {this.state.error && <div>
+                    Naruszenie klucza głownego! Aby usunac kategorię najpierw usun produkty ja zawierajace
+                    <button onClick={this.onErrorSubmit}/>
+                </div>}
             </div>
         );
     }
