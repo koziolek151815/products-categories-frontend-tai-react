@@ -41,7 +41,7 @@ function UpdateCategoryPage(props) {
             Update category
             <form>
                 <input ref={nameInput} type="text" name="name" placeholder="category name"/>
-                <button id="addCategory" onClick={updateCategoryRequest}>Submit</button>
+                <button id="addCategory" onClick={updateCategoryRequest}>Update</button>
             </form>
         </div>
     );
