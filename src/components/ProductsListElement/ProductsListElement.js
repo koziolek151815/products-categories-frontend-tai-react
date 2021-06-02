@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductsListElement({product}) {
+function ProductsListElement({product, deleteProduct}) {
     return (
         <div className="MainPage">
             {product.name}
@@ -8,7 +8,7 @@ function ProductsListElement({product}) {
             {product.category.name}
             <a className="btn btn-default bg-info"
                href={`/updateProduct/${product.id}`}>Edit</a>
-            <button>Delete</button>
+            <button onClick={() => deleteProduct(product.id)}>Delete</button>
         </div>
     );
 }

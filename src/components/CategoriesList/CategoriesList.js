@@ -26,11 +26,19 @@ class CategoriesList extends React.Component {
         })
     };
 
+    deleteCategory = (id) => {
+        axios.delete(
+            `${apiUrl}categories/${id}`
+        );
+        const filteredArray = this.state.categories.filter(category => category.id !== id)
+        this.setState({categories: filteredArray});
+    }
+
     render() {
         return (
             <div className="MainPage">
                 {this.state.categories.map((category, index) => (
-                    <CategoriesListElement category={category} key={index}/>
+                    <CategoriesListElement category={category} key={index} deleteCategory={this.deleteCategory}/>
                 ))}
             </div>
         );

@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
-function CategoriesListElement({category}) {
+
+function CategoriesListElement({category, deleteCategory}) {
+
     return (
         <div className="MainPage">
             {category.name}
@@ -8,7 +10,7 @@ function CategoriesListElement({category}) {
                href={`/categories/${category.id}/products`}>Check products</a>
             <a className="btn btn-default bg-info"
                href={`/updateCategory/${category.id}`}>Edit</a>
-            <button>Delete</button>
+            <button onClick={() => deleteCategory(category.id)}>Delete</button>
         </div>
     );
 }
