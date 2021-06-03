@@ -36,10 +36,33 @@ class ProductsList extends React.Component {
 
     render() {
         return (
-            <div className="MainPage">
-                {this.state.products.map((product, index) => (
+            <div className="">
+                <table className="table-bordered">
+                    <tr>
+                        <th>Index</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    {this.state.products.map((product, index) => (
+                        <tr>
+                            <td>{index + 1}</td>
+                            <td>{product.name}</td>
+                            <td>{product.price}</td>
+                            <td>{product.category.name}</td>
+                            <td><a className="btn btn-default bg-info"
+                                   href={`/updateProduct/${product.id}`}>Edit</a></td>
+                            <td>
+                                <button className="btn btn-default bg-danger" onClick={() => this.deleteProduct(product.id)}>Delete</button>
+                            </td>
+                        </tr>
+                    ))}
+                </table>
+                {/*{this.state.products.map((product, index) => (
                     <ProductsListElement product={product} key={index} deleteProduct={this.deleteProduct}/>
-                ))}
+                ))}*/}
             </div>
         );
     }

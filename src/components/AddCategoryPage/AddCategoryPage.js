@@ -18,11 +18,15 @@ function AddCategoryPage(props) {
             });
     }
     return (
-        <div className="MainPage">
-            Add category
+        <div className="">
+            <h4> Add category</h4>
             <form>
-                <input ref={nameInput} type="text" name="name" placeholder="category name"/>
-                <button id="addCategory" onClick={addCategoryRequest}>Submit</button>
+                <div className="form-group">
+                    <label>Name</label>
+                    <input ref={nameInput} type="text" name="name" className="form-control" aria-describedby="emailHelp"
+                           placeholder="category name"/>
+                </div>
+                <button onClick={addCategoryRequest} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );

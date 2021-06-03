@@ -10,6 +10,7 @@ import AddProductPage from "./components/AddProductPage/AddProductPage";
 import AddCategoryPage from "./components/AddCategoryPage/AddCategoryPage";
 import UpdateProductPage from "./components/UpdateProductPage/UpdateProductPage";
 import UpdateCategoryPage from "./components/UpdateCategoryPage/UpdateCategoryPage";
+import "./App.css"
 
 function App() {
     return (

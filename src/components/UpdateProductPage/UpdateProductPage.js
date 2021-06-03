@@ -42,9 +42,9 @@ function UpdateProductPage(props) {
             });
     }
     return (
-        <div className="MainPage">
-            Update product
-            <form>
+        <div className="">
+            <h4> Update product</h4>
+{/*            <form>
                 <input ref={nameInput} type="text" name="name"/>
                 <input ref={priceInput} type="number" name="name"/>
                 <select ref={categoryInput}>
@@ -53,6 +53,27 @@ function UpdateProductPage(props) {
                     )};
                 </select>
                 <button id="addCategory" onClick={updateProductRequest}>Update</button>
+            </form>*/}
+            <form>
+                <div className="form-group">
+                    <label>Name:</label>
+                    <input ref={nameInput} type="text" name="name" className="form-control"
+                           placeholder="name"/>
+                </div>
+                <div className="form-group">
+                    <label>Price:</label>
+                    <input ref={priceInput} type="number" name="name" className="form-control"
+                           placeholder="price"/>
+                </div>
+                <div className="form-group">
+                    <label>Category:</label>
+                    <select className="custom-select " ref={categoryInput}>
+                        {categories.map(category =>
+                            <option key={category.id} value={category.id}>{category.name}</option>
+                        )};
+                    </select>
+                </div>
+                <button onClick={updateProductRequest} type="submit" className="btn btn-primary">Update</button>
             </form>
         </div>
     );

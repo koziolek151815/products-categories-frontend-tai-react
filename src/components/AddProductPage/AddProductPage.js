@@ -31,9 +31,9 @@ function AddProductPage(props) {
 
 
     return (
-        <div className="MainPage">
-            Add product
-            <form>
+        <div className="">
+            <h4> Add product</h4>
+            {/*            <form>
                 <input ref={nameInput} type="text" name="name" placeholder="product name"/>
                 <input ref={priceInput} type="number" name="name" placeholder="price"/>
                 <select ref={categoryInput}>
@@ -42,6 +42,27 @@ function AddProductPage(props) {
                     )};
                 </select>
                 <button id="addCategory" onClick={addProductRequest}>Submit</button>
+            </form>*/}
+            <form>
+                <div className="form-group">
+                    <label>Name:</label>
+                    <input ref={nameInput} type="text" name="name" className="form-control"
+                           placeholder="name"/>
+                </div>
+                <div className="form-group">
+                    <label>Price:</label>
+                    <input ref={priceInput} type="number" name="name" className="form-control"
+                           placeholder="price"/>
+                </div>
+                <div className="form-group">
+                    <label>Category:</label>
+                    <select className="custom-select " ref={categoryInput}>
+                        {categories.map(category =>
+                            <option key={category.id} value={category.id}>{category.name}</option>
+                        )};
+                    </select>
+                </div>
+                <button onClick={addProductRequest} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );

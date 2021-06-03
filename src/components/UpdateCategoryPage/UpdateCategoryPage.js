@@ -37,11 +37,19 @@ function UpdateCategoryPage(props) {
         return null;
     }
     return (
-        <div className="MainPage">
-            Update category
-            <form>
+        <div className="">
+            <h4> Update category</h4>
+            {/*<form>
                 <input ref={nameInput} type="text" name="name" placeholder="category name"/>
                 <button id="addCategory" onClick={updateCategoryRequest}>Update</button>
+            </form>*/}
+            <form>
+                <div className="form-group">
+                    <label>Name:</label>
+                    <input ref={nameInput} type="text" name="name" className="form-control" aria-describedby="emailHelp"
+                           placeholder="category name"/>
+                </div>
+                <button onClick={updateCategoryRequest} type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     );

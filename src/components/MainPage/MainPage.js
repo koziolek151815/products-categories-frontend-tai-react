@@ -2,17 +2,22 @@ import React from "react";
 import ProductsList from "../ProductsList/ProductsList";
 import CategoriesList from "../CategoriesList/CategoriesList";
 import {withRouter} from "react-router-dom";
+import "./MainPage.css";
 
 function MainPage() {
     const allProductsUrl = "products"
     return (
         <div className="MainPage">
-            <ProductsList url={allProductsUrl}/>
-            <a className="btn btn-default bg-info"
-               href={`/addProduct`}>Add product</a>
-            <CategoriesList/>
-            <a className="btn btn-default bg-info"
-               href={`/addCategory`}>Add category</a>
+            <div>
+                <ProductsList url={allProductsUrl}/>
+                <a className="btn btn-default bg-success"
+                   href={`/addProduct`}>Add product</a>
+            </div>
+            <div>
+                <CategoriesList/>
+                <a className="btn btn-default bg-success"
+                   href={`/addCategory`}>Add category</a>
+            </div>
         </div>
     );
 }

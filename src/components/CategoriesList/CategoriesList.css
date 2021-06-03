@@ -1,0 +1,14 @@
+#err {
+    background-color: red;
+    max-width: 300px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+}
+
+#errorButton {
+
+}
+
