@@ -9,11 +9,13 @@ function MainPage() {
     return (
         <div className="MainPage">
             <div>
+                <h2>Products</h2>
                 <ProductsList url={allProductsUrl}/>
                 <a className="btn btn-default bg-success"
                    href={`/addProduct`}>Add product</a>
             </div>
             <div>
+                <h2>Categories</h2>
                 <CategoriesList/>
                 <a className="btn btn-default bg-success"
                    href={`/addCategory`}>Add category</a>

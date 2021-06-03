@@ -1,6 +1,7 @@
 #err {
     background-color: red;
     max-width: 300px;
+    margin-bottom: 0;
 }
 
 .categories {
@@ -9,6 +10,7 @@
 }
 
 #errorButton {
-
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 

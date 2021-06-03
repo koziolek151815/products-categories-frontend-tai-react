@@ -16,7 +16,7 @@ function ProductsForCategoryPage(props) {
     const productsForCategoryUrl = `categories/${props.match.params.id}/products`;
     return (
         <div className="all">
-            {category && <h4> Oto wszystkie produkty z kategorii: {category.name}</h4>}
+            {category && <h2> Oto wszystkie produkty z kategorii: {category.name}</h2>}
             <ProductsList url={productsForCategoryUrl}/>
         </div>
     );

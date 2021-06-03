@@ -50,28 +50,33 @@ class CategoriesList extends React.Component {
     render() {
         return (
             <div className="categories">
-                <table class="table-bordered">
-                    <tr>
-                        <th>Index</th>
-                        <th>Category name</th>
-                        <th>All products</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    {this.state.categories.map((category, index) => (
-                        <tr>
-                            <td>{index + 1}</td>
-                            <td>{category.name}</td>
-                            <td><a className="btn btn-default bg-secondary"
-                                   href={`/categories/${category.id}/products`}>Check products</a></td>
-                            <td><a className="btn btn-default bg-info"
-                                   href={`/updateCategory/${category.id}`}>Edit</a></td>
-                            <td>
-                                <button className="btn btn-default bg-danger" onClick={() => this.deleteCategory(category.id)}>Delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </table>
+                {this.state.categories.length?
+                    (<table class="table-bordered">
+                            <tr>
+                                <th>Index</th>
+                                <th>Name</th>
+                                <th>Products</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+
+                        {this.state.categories.map((category, index) => (
+                            <tr>
+                                <td>{index + 1}</td>
+                                <td>{category.name}</td>
+                                <td><a className="btn btn-default bg-secondary"
+                                       href={`/categories/${category.id}/products`}>Check products</a></td>
+                                <td><a className="btn btn-default bg-info"
+                                       href={`/updateCategory/${category.id}`}>Edit</a></td>
+                                <td>
+                                    <button className="btn btn-default bg-danger"
+                                            onClick={() => this.deleteCategory(category.id)}>Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </table>)
+                    :<h5> No categories</h5>}
                 {/*{this.state.categories.map((category, index) => (
                     <CategoriesListElement category={category} key={index} deleteCategory={this.deleteCategory}/>
                 ))}*/}
