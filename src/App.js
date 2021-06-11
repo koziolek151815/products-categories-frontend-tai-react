@@ -11,11 +11,13 @@ import AddCategoryPage from "./components/AddCategoryPage/AddCategoryPage";
 import UpdateProductPage from "./components/UpdateProductPage/UpdateProductPage";
 import UpdateCategoryPage from "./components/UpdateCategoryPage/UpdateCategoryPage";
 import "./App.css"
+import Header from "./components/Header/Header";
 
 function App() {
     return (
         <Router>
             <div className="App">
+                <Header></Header>
                 <div className="container d-flex flex-column">
                     <Switch>
                         <Route path="/" exact={true}>
